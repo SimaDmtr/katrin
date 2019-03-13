@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Oranienbaum';
+    src: url('Oranienbaum-Regular.eot');
+    src: url('Oranienbaum-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Oranienbaum-Regular.woff') format('woff'),
+        url('Oranienbaum-Regular.ttf') format('truetype'),
+        url('Oranienbaum-Regular.svg#Oranienbaum-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Light.eot');
+    src: url('Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+        url('Montserrat-Light.woff') format('woff'),
+        url('Montserrat-Light.ttf') format('truetype'),
+        url('Montserrat-Light.svg#Montserrat-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-ExtraLight.eot');
+    src: url('Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Montserrat-ExtraLight.woff') format('woff'),
+        url('Montserrat-ExtraLight.ttf') format('truetype'),
+        url('Montserrat-ExtraLight.svg#Montserrat-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
