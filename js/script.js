@@ -57,4 +57,17 @@ $(document).ready(function () {
     $('.popular_food_slider_button.right').click(function () {
         $('.popular_food_slider').slick("slickNext");
     })
+    $('.sixth_screen_content_right').mousewheel(function(e, delta) {
+        this.scrollLeft -= (delta * 50);
+        e.preventDefault();
+    });
+    $(".portfolio_items_wrapper").not(":first").hide(300)
+    $(".portfolio_items_wrapper:first").addClass("active");
+    $(".portfolio_tab_nav li").click(function () {
+        $(".portfolio_tab_nav li").eq($(this).index()).addClass("active");
+        $(".portfolio_items_wrapper").hide().eq($(this).index()).fadeIn().addClass('active').siblings().removeClass('active');
+        $(this).siblings().removeClass('active  ')
+    }).eq(0).addClass("active");
+
 });
+

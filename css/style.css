@@ -18,6 +18,7 @@ select {
 body {
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
+    overflow-x: hidden;
 }
 
 :before, :after {
@@ -285,6 +286,7 @@ textarea {
 
 .first_screen_content {
     padding: 3.5rem 0 5rem;
+    position: relative;
 }
 
 .first_screen_content_title {
@@ -849,12 +851,12 @@ textarea {
 
 .parallax-test-img-1 {
     left: -5%;
-    bottom: -20%;
+    bottom: 10%
 }
 
 .parallax-test-img-2 {
     right: 5%;
-    bottom: -10%;
+    bottom: 20%
 }
 
 .parallax-test-img-3 {
@@ -863,13 +865,13 @@ textarea {
 }
 
 .parallax-test-img-4 {
-    bottom: -10%;
+    bottom: 10%;
     left: 30%;
 }
 
 .parallax-test-img-5 {
     left: 0;
-    bottom: 30%;
+    bottom: 60%
 }
 
 .parallax-test-img-6 {
@@ -878,17 +880,17 @@ textarea {
 }
 
 .parallax-test-img-8 {
-    bottom: -10%;
+    bottom: 20%;
     left: 20%;
 }
 
 .parallax-test-img-9 {
     right: 10%;
-    bottom: 20%;
+    bottom: 50%;
 }
 
 .parallax-test-img-10 {
-    bottom: 10%;
+    bottom: 40%;
     left: 40%;
 }
 
@@ -1742,7 +1744,7 @@ h2 .circle:after {
 }
 
 .submit.free {
-    margin-top: 3.4rem;
+    margin-top: 2.4rem;
     position: relative;
     overflow: hidden;
     -webkit-border-radius: 11px;
@@ -1894,7 +1896,7 @@ input[type="radio"], input[type="checkbox"] {
 .proms_wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 5rem -3rem -3rem -3rem;
+    margin: 5rem -1.5rem -1.5rem -1.5rem;
 }
 
 .proms_item {
@@ -1988,6 +1990,14 @@ input[type="radio"], input[type="checkbox"] {
     border-radius: 11px;
     border: 1px solid #e7c94e;
 }
+.sixth_screen{
+    padding: 12rem 0 15rem;
+}
+.sixth_screen_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .sixth_screen_content_left {
     width: 23.53%;
@@ -1999,34 +2009,31 @@ input[type="radio"], input[type="checkbox"] {
     align-items: center;
 }
 
-.underline {
-    width: 100%;
-    height: 1px;
-}
-.portfolio_tab_header p{
+
+
+.portfolio_tab_header p {
     color: #26262f;
     font-size: 2.2rem;
     line-height: 2.4rem;
     text-transform: uppercase;
     font-family: Oranienbaum;
     letter-spacing: 0.1em;
-}
-.portfolio_tab_header .underline {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e4ec+0,ffffff+100&1+0,0+59,0+59 */
-    background: -moz-radial-gradient(center, ellipse cover, rgba(226, 228, 236, 1) 0%, rgba(243, 244, 247, 0) 59%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(226, 228, 236, 1) 0%, rgba(243, 244, 247, 0) 59%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center, rgba(226, 228, 236, 1) 0%, rgba(243, 244, 247, 0) 59%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e4ec', endColorstr='#00ffffff', GradientType=1); /* IE6-9 fallback on horizontal gradient */
     margin-top: 1.5rem;
 }
-.portfolio_tab_nav{
+
+
+
+.portfolio_tab_nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2.8rem;
 }
-.portfolio_tab_nav li{
+
+.portfolio_tab_nav li {
     width: 100%;
     padding: 2rem 0;
+    position: relative;
     -webkit-border-radius: 11px;
     -moz-border-radius: 11px;
     border-radius: 11px;
@@ -2035,9 +2042,44 @@ input[type="radio"], input[type="checkbox"] {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    background-color: #ffffff;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.portfolio_tab_nav li:hover p{
+.portfolio_tab_nav li.active{
+    background-color: #fdd73a;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.portfolio_tab_nav li.active p{
+    color: #26262f;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.portfolio_tab_nav li.active:hover p{
+    color: #26262f;
+}
+.portfolio_tab_nav li:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(226, 228, 236, 1) 0%, rgba(243, 244, 247, 0) 59%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(226, 228, 236, 1) 0%, rgba(243, 244, 247, 0) 59%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(226, 228, 236, 1) 0%, rgba(243, 244, 247, 0) 59%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e4ec', endColorstr='#00ffffff', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+    top: -1px;
+    left: 0;
+}
+.portfolio_tab_nav li:hover p {
     color: #fdd73a;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -2046,8 +2088,152 @@ input[type="radio"], input[type="checkbox"] {
     transition: all 0.3s;
 }
 
-.portfolio_tab_nav p{
+.portfolio_tab_nav p {
     font-size: 1.8rem;
     color: #26262f;
     text-align: center;
+    position: relative;
+}
+.portfolio_tab_nav p:after{
+    content: '';
+    right: -1.5rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    background-color: #ffffff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.portfolio_tab_nav p:before{
+    content: '';
+    left: -1.5rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    background-color: #ffffff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.sixth_screen_content_left .free.submit button {
+    padding: 3rem 1rem 3rem 4.1rem
+}
+
+.sixth_screen_content_right {
+    width: 74.52%;
+    padding-bottom: 3.2rem;
+    overflow-x: scroll;
+}
+
+.portfolio_items_wrapper {
+    margin: 0 -1.5rem;
+    display: flex;
+
+}
+
+.sixth_screen_content_right::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.sixth_screen_content_right::-webkit-scrollbar {
+    height: 10px;
+    background-color: #F5F5F5;
+}
+
+.sixth_screen_content_right::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fdd73a;
+}
+
+.portfolio_item {
+    position: relative;
+    padding: 3.4rem 3.3rem;
+    min-width: calc(50% - 3rem);
+    margin: 0 1.5rem;
+    cursor: pointer;
+
+
+}
+.portfolio_item:hover:after{
+    border: 1px solid #fdd73a;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.portfolio_item:after {
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    height: calc(100% - 6.8rem);
+    content: '';
+    position: absolute;
+    border: 1px solid #e2e4ec;
+    border-radius: 11px;
+    left: 50%;
+    top: 6.8rem;
+    z-index: -1;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.portfolio_item_inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio_item_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+}
+
+.portfolio_item_title {
+    font-size: 2.2rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.1em;
+    color: #26262f;
+    font-family: Oranienbaum;
+    text-transform: uppercase;
+}
+
+.portfolio_item_desc {
+    color: #f7132e;
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
+.portfolio_item_text {
+    color: #26262f;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
+.portfolio_image img {
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
 }
