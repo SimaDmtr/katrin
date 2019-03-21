@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+
+
     $(".custom-select").each(function () {
         var classes = $(this).attr("class"),
             id = $(this).attr("id"),
@@ -15,6 +18,10 @@ $(document).ready(function () {
         $(this).hide();
         $(this).after(template);
     });
+
+
+
+
     $(".custom-option:first-of-type").hover(function () {
         $(this).parents(".custom-options").addClass("option-hover");
     }, function () {
@@ -34,7 +41,7 @@ $(document).ready(function () {
         $(this).parents(".custom-select").removeClass("opened");
         $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
     });
-    $("#form_tel,#form_tel2").mask("+7 99-999-99-99");
+    $("#form_tel,#form_tel2,.steps_tel").mask("+7 99-999-99-99");
 
     var scene1 = document.getElementById('scene-1');
     var parallax = new Parallax(scene1, {
@@ -48,6 +55,27 @@ $(document).ready(function () {
     var parallax = new Parallax(scene3, {
         limitX: 0
     });
+    var scene4 = document.getElementById('scene-4');
+    var parallax = new Parallax(scene4, {
+        limitX: 0
+    });
+    var scene5 = document.getElementById('scene-5');
+    var parallax = new Parallax(scene5, {
+        limitX: 0
+    });
+    var scene6 = document.getElementById('scene-6');
+    var parallax = new Parallax(scene6, {
+        limitX: 0
+    });
+    var scene7 = document.getElementById('scene-7');
+    var parallax = new Parallax(scene7, {
+        limitX: 0
+    });
+
+    var scene8 = document.getElementById('scene-8');
+    var parallax = new Parallax(scene8, {
+        limitX: 0
+    });
     $('.popular_food_slider').slick({
         arrows: false
     })
@@ -57,7 +85,7 @@ $(document).ready(function () {
     $('.popular_food_slider_button.right').click(function () {
         $('.popular_food_slider').slick("slickNext");
     })
-    $('.sixth_screen_content_right').mousewheel(function(e, delta) {
+    $('.sixth_screen_content_right').mousewheel(function (e, delta) {
         this.scrollLeft -= (delta * 50);
         e.preventDefault();
     });
@@ -68,6 +96,17 @@ $(document).ready(function () {
         $(".portfolio_items_wrapper").hide().eq($(this).index()).fadeIn().addClass('active').siblings().removeClass('active');
         $(this).siblings().removeClass('active  ')
     }).eq(0).addClass("active");
+    $('.seventh_screen_row_sliders_item').slick({
+        slidesToShow: 1,
+        nextArrow: '<button class="arrow icon-chevron-left"></button>',
+        prevArrow: '<button class="arrow icon-chevron-right"></button>'
+    })
+
+    $('.sert_gallery').slick({
+        slidesToShow: 5,
+        nextArrow: '<button class="arrow icon-chevron-left"></button>',
+        prevArrow: '<button class="arrow icon-chevron-right"></button>'
+    })
 
 });
 
