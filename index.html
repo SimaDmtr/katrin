@@ -16,7 +16,8 @@
 <section class="first_screen">
     <header class="container">
         <div class="header_wrap">
-            <div class="header_logo"><img src="img/logo.png" alt="">
+            <div class="header_logo">
+                <div class="logo_img_wrap"><img src="img/logo.png" alt=""></div>
                 <p class="header_logo_desc">Организация банкетов, фуршетов, кофе -
                     брейк и барбекю для предприятий и
                     частных лиц в Москве с 2012 года</p>
@@ -24,7 +25,7 @@
             <div class="header_downlaod">
                 <img src="img/menu.png" alt="">
                 <div class="header_downlaod_content">
-                    <p>Скачать меню</p>
+                    <p class="register">Скачать меню</p>
                     <span>(1,2 Mb)</span>
                 </div>
             </div>
@@ -45,18 +46,18 @@
     </header>
     <nav class="first_screen_nav">
         <ul class="container">
-            <li><a href="#main">Главная</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Для кого</a></li>
-            <li><a href="#">Меню блюд</a></li>
-            <li><a href="#">Акции и подарки</a></li>
-            <li><a href="#">Примеры наших работ</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Клиенты и отзывы</a></li>
-            <li><a href="#">Преимущества</a></li>
-            <li><a href="#">Схема работы</a></li>
-            <li><a href="#">Консультация</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a class="menu_item" href="#main">Главная</a></li>
+            <li><a class="menu_item" href="#services">Услуги</a></li>
+            <li><a class="menu_item" href="#for">Для кого</a></li>
+            <li><a class="menu_item" href="#menu">Меню блюд</a></li>
+            <li><a class="menu_item" href="#stock">Акции и подарки</a></li>
+            <li><a class="menu_item" href="#portfolio">Примеры наших работ</a></li>
+            <li><a class="menu_item" href="#about">О компании</a></li>
+            <li><a class="menu_item" href="#feedbacks">Клиенты и отзывы</a></li>
+            <li><a class="menu_item" href="#advantages">Преимущества</a></li>
+            <li><a class="menu_item" href="#scheme">Схема работы</a></li>
+            <li><a class="menu_item" href="#consult">Консультация</a></li>
+            <li><a class="menu_item" href="#contacts">Контакты</a></li>
         </ul>
     </nav>
     <div class="first_screen_content">
@@ -127,12 +128,12 @@
             <div class="first_screen_content_right">
                 <p class="first_screen_content_right_title">Получите индивидуальный расчет Вашего
                     мероприятия уже через 15 минут</p>
-                <form action="">
+                <form id="first_screen_form" action="mail.php">
                     <div class="form_row">
                         <span class="row_num">01<span class="row_num_line"></span></span>
                         <select name="sources" id="type" class="custom-select sources"
-                                placeholder="Выездной кофе-брейк">
-                            <option value="profile">Выездной банкет</option>
+                                placeholder="Выездной кофе-брейк" required>
+                            <option selected value="profile">Выездной банкет</option>
                             <option value="word">Выездной фуршет</option>
                             <option value="hashtag">Барбекю</option>
                             <option value="hashtag">Кофе-брейк</option>
@@ -143,8 +144,8 @@
                     <div class="form_row">
                         <span class="row_num">02<span class="row_num_line"></span></span>
                         <select name="sources" id="form" class="custom-select sources"
-                                placeholder="Выездной кофе-брейк">
-                            <option value="profile">Выездной банкет</option>
+                                placeholder="Выездной кофе-брейк" required>
+                            <option selected value="profile">Выездной банкет</option>
                             <option value="word">Выездной фуршет</option>
                             <option value="hashtag">Барбекю</option>
                             <option value="hashtag">Кофе-брейк</option>
@@ -155,25 +156,25 @@
                     <div class="form_row non_select">
                         <span class="row_num">03<span class="row_num_line"></span></span>
                         <div class="form_row_input"><label for="count">Кол-во человек:</label>
-                            <input type="number" id="count" placeholder="25"></div>
+                            <input required type="number" id="count" placeholder="25"></div>
                     </div>
                     <div class="form_row non_select">
                         <span class="row_num">04<span class="row_num_line"></span></span>
                         <div class="form_row_input"><label for="date">Выберите дату</label>
-                            <input type="date" id="date" placeholder="Например, 01.01.2019"></div>
+                            <input required type="date" id="date" placeholder="Например, 01.01.2019"></div>
                     </div>
                     <div class="form_row non_select">
                         <span class="row_num"><span class="row_num_line"></span></span>
                         <div class="form_row_input"><label for="form_mail">Ваш E-mail:</label>
-                            <input type="email" id="form_mail" placeholder="example@example.com"></div>
+                            <input required type="email" id="form_mail" placeholder="example@example.com"></div>
                     </div>
                     <div class="form_row non_select">
                         <span class="row_num"></span>
                         <div class="form_row_input"><label for="form_tel">Ваш телефон:</label>
-                            <input type="tel" id="form_tel" placeholder="+375 (**) ***-**-**"></div>
+                            <input required type="tel" id="form_tel" placeholder="+375 (**) ***-**-**"></div>
                     </div>
                     <div class="form_row_input">
-                        <button type="submit" class="btn btn-form">Выслать мне расчёт
+                        <button form="first_screen_form" type="submit" class="btn btn-form">Выслать мне расчёт
                         </button>
                         <img class="book_img" src="img/book.png" alt="">
                     </div>
@@ -182,7 +183,7 @@
         </div>
     </div>
 </section>
-<section class="second_screen">
+<section id="services" class="second_screen">
     <div class="container">
         <h2>Специализируемся на оказании <span>следующих услуг</span><span class="circle"></span></h2>
         <div class="second_screen_content">
@@ -198,7 +199,7 @@
                         <p>Спец. условия для
                             организаторов и Event-
                             агентств</p>
-                        <a href="#">Получить предложение</a>
+                        <a class="take_offer" href="#">Получить предложение</a>
                     </div>
                 </div>
             </div>
@@ -226,9 +227,9 @@
                     </ul>
                     <ul class="service_list list2">
                         <li><img src="img/File.png" alt="">
-                            <p>Получить предложение</p></li>
+                            <p class="take_offer">Получить предложение</p></li>
                         <li><img src="img/Eye.png" alt="">
-                            <p>Смотреть примеры работ</p></li>
+                            <a href="#portfolio">Смотреть примеры работ</a></li>
                     </ul>
                 </div>
             </div>
@@ -256,9 +257,9 @@
                     </ul>
                     <ul class="service_list list2">
                         <li><img src="img/File.png" alt="">
-                            <p>Получить предложение</p></li>
+                            <p class="take_offer">Получить предложение</p></li>
                         <li><img src="img/Eye.png" alt="">
-                            <p>Смотреть примеры работ</p></li>
+                            <a href="#portfolio">Смотреть примеры работ</a></li>
                     </ul>
                 </div>
             </div>
@@ -286,9 +287,9 @@
                     </ul>
                     <ul class="service_list list2">
                         <li><img src="img/File.png" alt="">
-                            <p>Получить предложение</p></li>
+                            <p class="take_offer">Получить предложение</p></li>
                         <li><img src="img/Eye.png" alt="">
-                            <p>Смотреть примеры работ</p></li>
+                            <a href="#portfolio">Смотреть примеры работ</a></li>
                     </ul>
                 </div>
             </div>
@@ -316,9 +317,9 @@
                     </ul>
                     <ul class="service_list list2">
                         <li><img src="img/File.png" alt="">
-                            <p>Получить предложение</p></li>
+                            <p class="take_offer">Получить предложение</p></li>
                         <li><img src="img/Eye.png" alt="">
-                            <p>Смотреть примеры работ</p></li>
+                            <a href="#portfolio">Смотреть примеры работ</a></li>
                     </ul>
                 </div>
             </div>
@@ -346,9 +347,9 @@
                     </ul>
                     <ul class="service_list list2">
                         <li><img src="img/File.png" alt="">
-                            <p>Получить предложение</p></li>
+                            <p class="take_offer">Получить предложение</p></li>
                         <li><img src="img/Eye.png" alt="">
-                            <p>Смотреть примеры работ</p></li>
+                            <a href="#portfolio">Смотреть примеры работ</a></li>
                     </ul>
                 </div>
             </div>
@@ -376,23 +377,23 @@
                     </ul>
                     <ul class="service_list list2">
                         <li><img src="img/File.png" alt="">
-                            <p>Получить предложение</p></li>
+                            <p class="take_offer">Получить предложение</p></li>
                         <li><img src="img/Eye.png" alt="">
-                            <p>Смотреть примеры работ</p></li>
+                            <a href="#portfolio">Смотреть примеры работ</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="second_screen_item last" style="background: url(img/ser7.png)">
+            <a href="#portfolio" class="second_screen_item last" style="background: url(img/ser7.png)">
                 <div class="second_screen_item_inner">
                     <img src="img/big3.png" alt="">
                     <p>Смотреть наши
                         примеры  работ</p>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>
-<section class="third_screen">
+<section id="for" class="third_screen">
     <div class="container">
         <h2>Организуем мероприятие под ключ или <span>доставим блюда:</span><span class="circle"></span></h2>
         <div class="third_screen_content">
@@ -484,7 +485,7 @@
                         <div class="red_mask"></div>
                     </div>
                 </div>
-                <div class="btn">ПОДОБРАТЬ БАНКЕТНЫЙ ЗАЛ</div>
+                <button class="btn banket">ПОДОБРАТЬ БАНКЕТНЫЙ ЗАЛ</button>
             </div>
         </div>
     </div>
@@ -506,7 +507,7 @@
         </div>
     </div>
 </section>
-<section class="fourth_screen">
+<section id="menu" class="fourth_screen">
     <div class="container">
         <h2>Посмотрите меню <span>наших блюд</span><span class="circle"></span></h2>
         <div class="fourth_screen_content">
@@ -552,21 +553,21 @@
                 <div class="fourth_screen_content_right_links">
                     <p class="fourth_screen_content_right_links_title">Выберите необходимое Вам меню:</p>
                     <ul>
-                        <li><a href="#">Скачать банкетное меню</a></li>
-                        <li><a href="#">Скачать меню выездного фуршета</a></li>
-                        <li><a href="#">Скачать меню фуршутного стола</a></li>
-                        <li><a href="#">Скачать меню кофе-брейка</a></li>
-                        <li><a href="#">Скачать меню новогоднего банкета</a></li>
+                        <li><a class="register" href="#">Скачать банкетное меню</a></li>
+                        <li><a class="register" href="#">Скачать меню выездного фуршета</a></li>
+                        <li><a class="register" href="#">Скачать меню фуршутного стола</a></li>
+                        <li><a class="register" href="#">Скачать меню кофе-брейка</a></li>
+                        <li><a class="register" href="#">Скачать меню новогоднего банкета</a></li>
                     </ul>
                 </div>
                 <div class="fourth_screen_content_right_form">
                     <p class="fourth_screen_form_title">или Разработаем <span>меню<br>
                         под Ваше мероприятие</span></p>
-                    <form class="form_menu">
+                    <form id="form_menu" class="form_menu" action="mail.php">
                         <div class="form_row">
                             <select name="sources" id="format" class="custom-select sources"
                                     placeholder="Выездной кофе-брейк">
-                                <option value="profile">Выездной кофе-брейк</option>
+                                <option selected value="profile">Выездной кофе-брейк</option>
                                 <option value="word">Выездной фуршет</option>
                                 <option value="hashtag">Барбекю</option>
                                 <option value="hashtag">Кофе-брейк</option>
@@ -583,7 +584,7 @@
                                 <input type="tel" id="form_tel2" placeholder="+7 (**) ***-**-**"></div>
                         </div>
                         <div class="form_row_input submit free">
-                            <button type="submit" class="btn">ПОЛУЧИТЬ МЕНЮ</button>
+                            <button form="form_menu" type="submit" class="btn">ПОЛУЧИТЬ МЕНЮ</button>
                             <span class="free_label">бесплатно</span>
                         </div>
                         <div class="dont_spam">
@@ -599,7 +600,7 @@
         </div>
     </div>
 </section>
-<section class="fifth_screen">
+<section id="stock" class="fifth_screen">
     <div class="parallax-scene" id="scene-3">
         <div data-depth="1.5" class="parallax-item parallax-test-img-16">
             <img src="img/Canape1.png" alt="">
@@ -621,7 +622,7 @@
                         шоколадный
                         фонтан стоимостью
                         9 000 рублей на Вашем празднике БЕСПЛАТНО</p></div>
-                <div class="btn yell">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
+                <div class="btn yell register">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
             </div>
             <div class="proms_item" style="background-image: url(img/promo2.png)">
                 <div class="proms_item_text">
@@ -629,7 +630,7 @@
                     <p class="proms_item_content">Профессиональная кофемашина и бариста. Неограниченное количество
                         порций
                         кофе в течение мероприятия: американо, капучино, латте, ристретто и др.</p></div>
-                <div class="btn yell">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
+                <div class="btn yell register">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
             </div>
             <div class="proms_item" style="background-image: url(img/promo3.png)">
                 <div class="proms_item_text">
@@ -638,7 +639,7 @@
                         количеству
                         гостей на мероприятии. Создание анимации «дымовая завеса» с использованием сухого льда</p>
                 </div>
-                <div class="btn yell">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
+                <div class="btn yell register">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
             </div>
             <div class="proms_item" style="background-image: url(img/promo4.png)">
                 <div class="proms_item_text">
@@ -648,13 +649,13 @@
                         соответствует количеству гостей на мероприятии. Создание анимации «дымовая завеса» с
                         использованием
                         жидкого азота</p></div>
-                <div class="btn yell">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
+                <div class="btn yell register">РАССЧИТАТЬ СТОИМОСТЬ МЕРОПРИЯТИЯ</div>
             </div>
         </div>
 
     </div>
 </section>
-<section class="sixth_screen">
+<section id="portfolio" class="sixth_screen">
     <div class="container">
         <h2>Примеры организованных нами <span>мероприятний</span><span class="circle"></span></h2>
         <div class="sixth_screen_content">
@@ -682,7 +683,7 @@
                     </li>
                 </ul>
                 <div class="form_row_input submit free">
-                    <button type="submit" class="btn">ПОЛУЧИТЬ консультацию</button>
+                    <button class="btn register">ПОЛУЧИТЬ консультацию</button>
                     <span class="free_label">бесплатно</span>
                 </div>
             </div>
@@ -692,60 +693,20 @@
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
+                    </div>
+                    <div class="portfolio_item">
+                        <div class="portfolio_image">
+                            <img src="img/6_1.png" alt="">
                         </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio_item">
-                        <div class="portfolio_image">
-                            <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
                         </div>
                     </div>
                 </div>
@@ -754,60 +715,20 @@
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
+                    </div>
+                    <div class="portfolio_item">
+                        <div class="portfolio_image">
+                            <img src="img/6_1.png" alt="">
                         </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio_item">
-                        <div class="portfolio_image">
-                            <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
                         </div>
                     </div>
                 </div>
@@ -816,60 +737,20 @@
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
+                    </div>
+                    <div class="portfolio_item">
+                        <div class="portfolio_image">
+                            <img src="img/6_1.png" alt="">
                         </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio_item">
-                        <div class="portfolio_image">
-                            <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
                         </div>
                     </div>
                 </div>
@@ -878,60 +759,20 @@
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
+                    </div>
+                    <div class="portfolio_item">
+                        <div class="portfolio_image">
+                            <img src="img/6_1.png" alt="">
                         </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio_item">
-                        <div class="portfolio_image">
-                            <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
                         </div>
                     </div>
                 </div>
@@ -940,68 +781,29 @@
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
+                    </div>
+                    <div class="portfolio_item">
+                        <div class="portfolio_image">
+                            <img src="img/6_1.png" alt="">
                         </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
                     </div>
                     <div class="portfolio_item">
                         <div class="portfolio_image">
                             <img src="img/6_1.png" alt="">
                         </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio_item">
-                        <div class="portfolio_image">
-                            <img src="img/6_1.png" alt="">
-                        </div>
-                        <div class="portfolio_item_content">
-                            <p class="portfolio_item_title">Корпортатив у Президента</p>
-                            <p class="portfolio_item_desc">Коротко о мероприятии:</p>
-                            <p class="portfolio_item_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip.</p>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="seventh_screen">
+<section id="about" class="seventh_screen">
     <div class="parallax-scene" id="scene-4">
         <div data-depth="0.5" class="parallax-item parallax-test-img-19">
             <img src="img/ChangeColor.png" alt="">
@@ -1027,7 +829,7 @@
                     полностью
                     насладиться атмосферой праздника»</p>
                 <div class="form_row_input submit free">
-                    <button type="submit" class="btn">ОСТАВИТЬ ЗАЯВКУ НА РАСЧЕТ МЕРОПРИЯТИЯ</button>
+                    <button type="submit" class="btn register">ОСТАВИТЬ ЗАЯВКУ НА РАСЧЕТ МЕРОПРИЯТИЯ</button>
                     <span class="free_label">бесплатно</span>
                 </div>
             </div>
@@ -1159,7 +961,7 @@
         </div>
     </div>
 </section>
-<section class="eight_screen">
+<section id="feedbacks" class="eight_screen">
     <div class="parallax-scene" id="scene-5">
         <div data-depth="1" class="parallax-item parallax-test-img-21">
             <img src="img/cocktail.png" alt="">
@@ -1198,7 +1000,7 @@
         </div>
     </div>
 </section>
-<section class="nineth_screen">
+<section id="advantages" class="nineth_screen">
     <div class="parallax-scene" id="scene-6">
         <div data-depth="1" class="parallax-item parallax-test-img-27">
             <img src="img/Fig.png" alt="">
@@ -1265,7 +1067,7 @@
                         помогут Вам не только</p>
                 </div>
                 <div class="form_row_input submit free">
-                    <button type="submit" class="btn">СКАЧАТЬ (PDF 1.5 Mb)</button>
+                    <button type="submit" class="btn register">СКАЧАТЬ (PDF 1.5 Mb)</button>
                     <span class="free_label">бесплатно</span>
                 </div>
             </div>
@@ -1276,7 +1078,7 @@
         <img src="img/book9.png" alt="">
     </div>
 </section>
-<section class="tenth_screen">
+<section id="scheme" class="tenth_screen">
     <div class="container">
         <h2>Если говорить о<span>надёжности</span><span class="circle"></span></h2>
         <div class="tenth_screen_content">
@@ -1286,7 +1088,7 @@
                     <p class="be_customer_content">Наш опыт работы - это сотни  заказчиков которым мы помогли
                         организовать  мероприятия различного уровня</p>
                     <div class="form_row_input submit">
-                        <button type="submit" class="btn">СТАТЬ НАШИМ КЛИЕНТОМ</button>
+                        <button type="submit" class="btn register">СТАТЬ НАШИМ КЛИЕНТОМ</button>
                     </div>
                 </div>
                 <div class="partners">
@@ -1431,7 +1233,7 @@
         </div>
     </div>
 </section>
-<section class="eleventh_screen">
+<section id="consult" class="eleventh_screen">
     <div class="parallax-scene" id="scene-7">
         <div data-depth="1" class="parallax-item parallax-test-img-33">
             <img src="img/buter.png" alt="">
@@ -1460,7 +1262,7 @@
                     <img class="eleventh_screen_photo" src="img/screen11_img1.png" alt="">
                     <p class="eleventh_screen_photos_item_title">Возможность БЕСПЛАТНОЙ ДЕГУСТАЦИИ</p>
                     <p class="eleventh_screen_photos_item_desc">на крупные заказы (от 100 персон)</p>
-                    <div class="btn yell">БЕСПЛАТНАЯ ДЕГУСТАЦИЯ</div>
+                    <div class="btn yell register">БЕСПЛАТНАЯ ДЕГУСТАЦИЯ</div>
                 </div>
                 <div class="eleventh_screen_photos_item">
                     <img class="eleventh_screen_photo" src="img/screen11_img2.png" alt="">
@@ -1495,7 +1297,7 @@
         </div>
     </div>
 </section>
-<section class="twelfth_screen">
+<section id="contacts" class="twelfth_screen">
     <div class="parallax-scene" id="scene-8">
         <div data-depth="1" class="parallax-item parallax-test-img-35">
             <img src="img/spoon.png" alt="">
@@ -1534,8 +1336,8 @@
                     <p class="twelfth_screen_steps_item_text">Оставляете заявку - мы в течение 5 минут связываемся с
                         Вами и рассчитываем стоимость и условия
                         заказа.</p>
-                    <form id="steps_form" action=""><input class="steps_tel" name="steps_tel" type="tel"
-                                                           placeholder="Ваш телефон:" required>
+                    <form id="steps_form" action="mail.php"><input class="steps_tel" name="steps_tel" type="tel"
+                                                                   placeholder="Ваш телефон:" required>
                         <button type="submit" form="steps_form" class="btn yell">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
                     </form>
 
@@ -1588,17 +1390,18 @@
                 <p class="consult_desc">Которое прикрепляется к договору и является неотъемлемой его частью</p>
             </div>
             <div class="twelfth_screen_form_wrapper">
-                <div class="twelfth_screen_form">
+                <form class="twelfth_screen_form" id="consult_form">
                     <p class="twelfth_screen_form_title">Получите консультацию и наиболее выгодное предложение для
                         Вас</p>
                     <div class="twelfth_screen_form_row">
                         <div class="form_row non_select">
                             <div class="form_row_input"><label for="your_name">Ваше имя:</label>
-                                <input type="text" id="your_name_consult" placeholder=""></div>
+                                <input required type="text" id="your_name_consult" placeholder=""></div>
                         </div>
                         <div class="form_row non_select">
                             <div class="form_row_input"><label for="form_tel">Ваш телефон:</label>
-                                <input type="tel" id="form_tel_consult" placeholder="+375 (**) ***-**-**"></div>
+                                <input required type="tel" id="form_tel_consult" placeholder="+375 (**) ***-**-**">
+                            </div>
                         </div>
                         <div class="dont_spam">
                             <input type="checkbox" name="no" class="customRadio_radio" id="no_consult" tabindex="0"
@@ -1613,7 +1416,7 @@
                         <button type="submit" class="btn"><img src="img/button_icon.png" alt="">Получить консультацию
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -1694,7 +1497,8 @@
 
         </div>
         <div class="footer_content_under">
-            <div class="header_logo"><img src="img/logo.png" alt="">
+            <div class="header_logo">
+                <div class="logo_img_wrap"><img src="img/logo.png" alt=""></div>
                 <p class="header_logo_desc">Организация банкетов, фуршетов, кофе -
                     брейк и барбекю для предприятий и
                     частных лиц в Москве с 2012 года</p>
@@ -1705,17 +1509,191 @@
             </div>
             <div class="footer_content_under_right">
                 <p>Сделано с любовью<br>
-                в <a class="with_love" href="https://paradigma.website">Paradigma.website</a></p>
+                    в <a class="with_love" href="https://paradigma.website">Paradigma.website</a></p>
             </div>
         </div>
     </div>
 </footer>
 </body>
-<div class="popup_1">
+<div class="popup popup_2">
+    <div class="popup_wrapper">
+        <div class="popup_inner">
+            <p class="popup_title">Спасибо за проявленный интерес!</p>
+            <p class="popup_desc">Мы прямо сейчас обрабатываем Ваш запрос<br>
+                и ответим Вам в ближайшие 30-40 минут<br>
+                в рабочее время: Пн- Пт 9:00-18:00</p>
+            <div class="popup_img"><img src="img/popup2_img.png" alt=""></div>
+        </div>
+        <div class="close"></div>
+    </div>
+</div>
+<div class="popup popup_3">
+    <div class="popup_wrapper">
+        <div class="popup_inner">
+            <p class="popup_title">Зарегистрируйтесь в 1 клик</p>
+            <p class="popup_desc">чтобы получить доступ к меню</p>
+            <form action="mail.php" class="popup_inputs">
+                <div class="form_row">
+                    <select name="sources" id="popup3_input1" class="custom-select sources" required
+                            placeholder="Например, фуршет на 50 персон">
+                        <option selected value="profile">Выездной банкет</option>
+                        <option value="word">Выездной фуршет</option>
+                        <option value="hashtag">Барбекю</option>
+                        <option value="hashtag">Кофе-брейк</option>
+                        <option value="hashtag">Шведский стол</option>
+                        <option value="hashtag">Доставка закусок</option>
+                    </select>
+                    <label for="popup3_input1">СМОТРЕТЬ БАНКЕТНОЕ МЕНЮ:</label></div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="popup3_input2">Ваш E-mail:</label>
+                        <input required type="email" id="popup3_input2" placeholder="example@example.com"></div>
+                </div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="popup3_input3">Ваш телефон:</label>
+                        <input required type="tel" id="popup3_input3" placeholder="+375 (**) ***-**-**"></div>
+                </div>
+                <button type="submit" class="btn">ПЕРЕЙТИ В РАЗДЕЛ МЕНЮ</button>
+                <div class="dont_spam">
+                    <input type="checkbox" name="no" class="customRadio_radio" id="no_popup3" tabindex="0" checked>
+                    <label for="no_popup3" class="customRadio_label customRadio_label-check">
+                        <span class="checkbox-item"></span>
+                        <span>Обещаем не спамить</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="close"></div>
+    </div>
+</div>
+<div class="popup popup_4">
+    <div class="popup_wrapper">
+        <div class="popup_inner">
+            <p class="popup_title">Получите актауальное предложение</p>
+            <p class="popup_desc">Обновлено: 03.03.2019</p>
+            <form action="mail.php" class="popup_inputs">
+                <div class="form_row">
+                    <select name="sources" id="popup4_input1" class="custom-select sources" required
+                            placeholder="Оргнанизации выезного фуршета">
+                        <option selected value="profile">Выездной банкет</option>
+                        <option value="word">Выездной фуршет</option>
+                        <option value="hashtag">Барбекю</option>
+                        <option value="hashtag">Кофе-брейк</option>
+                        <option value="hashtag">Шведский стол</option>
+                        <option value="hashtag">Доставка закусок</option>
+                    </select>
+                    <label for="popup4_input1">предложение по:</label></div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="popup4_input2">Ваш E-mail:</label>
+                        <input required type="email" id="popup4_input2" placeholder="example@example.com"></div>
+                </div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="popup4_input3">Ваш телефон:</label>
+                        <input required type="tel" id="popup4_input3" placeholder="+375 (**) ***-**-**"></div>
+                </div>
+                <div class="popup_button_wrap">
+                    <button type="submit" class="btn">Загрузить предложение</button>
+                    <img src="img/popup4_book.png" alt=""></div>
+                <div class="dont_spam">
+                    <input type="checkbox" name="no" class="customRadio_radio" id="no_popup4" tabindex="0" checked>
+                    <label for="no_popup4" class="customRadio_label customRadio_label-check">
+                        <span class="checkbox-item"></span>
+                        <span>Обещаем не спамить</span>
+                    </label>
+                </div>
+            </form>
 
+        </div>
+        <div class="close"></div>
+    </div>
+</div>
+<div class="popup popup_5">
+    <div class="popup_wrapper">
+        <div class="popup_inner">
+            <p class="popup_title">Подобрать банкетный зал</p>
+            <form action="mail.php" class="popup_inputs">
+                <div class="form_row">
+                    <select name="sources" id="popup5_input1" class="custom-select sources" required
+                            placeholder="Выездной кофе-брейк">
+                        <option selected value="profile">Выездной банкет</option>
+                        <option value="word">Выездной фуршет</option>
+                        <option value="hashtag">Барбекю</option>
+                        <option value="hashtag">Кофе-брейк</option>
+                        <option value="hashtag">Шведский стол</option>
+                        <option value="hashtag">Доставка закусок</option>
+                    </select>
+                    <label for="popup5_input1">Выберите формат мероприятия:</label></div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="count">Ваш E-mail:</label>
+                        <input required type="email" id="popup5_input2" placeholder="example@example.com"></div>
+                </div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="count">Ваш телефон:</label>
+                        <input required type="tel" id="popup5_input3" placeholder="+375 (**) ***-**-**"></div>
+                </div>
+                <button type="submit" class="btn"><img src="img/popup5_img_button.png" alt="">Подобрать зал</button>
+
+                <div class="dont_spam">
+                    <input type="checkbox" name="no" class="customRadio_radio" id="no_popup5" tabindex="0" checked>
+                    <label for="no_popup4" class="customRadio_label customRadio_label-check">
+                        <span class="checkbox-item"></span>
+                        <span>Обещаем не спамить</span>
+                    </label>
+                </div>
+            </form>
+
+        </div>
+        <div class="close"></div>
+    </div>
+</div>
+<div class="popup popup_6">
+    <div class="popup_wrapper">
+        <div class="popup_inner">
+            <p class="popup_title">ТОП-10 ключевых ошибок<br>
+                организации мероприятия</p>
+            <form action="mail.php" class="popup_inputs">
+                <div class="form_row">
+                    <select name="sources" id="popup6_input1" class="custom-select sources" required
+                            placeholder="WhatsApp">
+                        <option selected value="profile">Выездной банкет</option>
+                        <option value="word">Выездной фуршет</option>
+                        <option value="hashtag">Барбекю</option>
+                        <option value="hashtag">Кофе-брейк</option>
+                        <option value="hashtag">Шведский стол</option>
+                        <option value="hashtag">Доставка закусок</option>
+                    </select>
+                    <label for="popup6_input1">Куда отправить:</label></div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="popup6_input2">Ваш E-mail:</label>
+                        <input required type="email" id="popup6_input2" placeholder="example@example.com"></div>
+                </div>
+                <div class="form_row non_select">
+                    <div class="form_row_input"><label for="popup6_input3">Ваш телефон:</label>
+                        <input required type="tel" id="popup6_input3" placeholder="+375 (**) ***-**-**"></div>
+                </div>
+                <div class="popup_button_wrap">
+                    <div class="form_row_input submit free">
+                        <button type="submit" class="btn">ПОЛУЧИТЬ</button>
+                        <span class="free_label">бесплатно</span>
+                    </div>
+                    <img src="img/popup6_img.png" alt="">
+                </div>
+                <div class="dont_spam">
+                    <input type="checkbox" name="no" class="customRadio_radio" id="no_popup6" tabindex="0" checked>
+                    <label for="no_popup6" class="customRadio_label customRadio_label-check">
+                        <span class="checkbox-item"></span>
+                        <span>Обещаем не спамить</span>
+                    </label>
+                </div>
+            </form>
+
+        </div>
+        <div class="close"></div>
+    </div>
+</div>
 </div>
 <script src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af7c80f2aae44c290eee1fa625d42c6925b6e8023cbb747f8eafc219eb1fa9a37&amp;width=100%&amp;lang=ru_RU&amp;id=map&amp;scroll=true"></script>
+<script type="text/javascript" charset="utf-8" async
+        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af7c80f2aae44c290eee1fa625d42c6925b6e8023cbb747f8eafc219eb1fa9a37&amp;width=100%&amp;lang=ru_RU&amp;id=map&amp;scroll=true"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="js/jquery.parallax.min.js"></script>
 <script src="js/parallax.js"></script>

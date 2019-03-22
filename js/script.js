@@ -1,6 +1,10 @@
 $(document).ready(function () {
-
-
+    $('.menu_item,.second_screen_item.last,.service_list li a ').click(function () {
+        var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+            $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1000); // анимируем скроолинг к элементу scroll_el
+        }
+    })
 
     $(".custom-select").each(function () {
         var classes = $(this).attr("class"),
@@ -19,8 +23,92 @@ $(document).ready(function () {
         $(this).after(template);
     });
 
+    $("#first_screen_form,.popup form,#form_menu,#steps_form, #consult_form").submit(function () {
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function () {
+            $.fancybox.close();
+            // код после успешной отправки формы
+            $.fancybox.open({
+                src  : '.popup_2',
+                type : 'inline',
+                opts : {
+                    onComplete : function() {
+                        console.info('done!');
+                    }
+                },
+                'transitionIn': 'elastic',
+                'transitionOut': 'elastic',
+                'speedIn': 500,
+                'speedOut': 300,
+                hideOnOverlayClick: true
+            });
+
+        });
+        return false;
+    });
+    $('.take_offer').click(function () {
+        $.fancybox.open({
+            src  : '.popup_4',
+            type : 'inline',
+            opts : {
+                onComplete : function() {
+                    console.info('done!');
+                }
+            },
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',
+            'speedIn': 500,
+            'speedOut': 300,
+            hideOnOverlayClick: true,
+            centerOnScroll: true
+        });
+    })
+
+    $('.register').click(function () {
+        $.fancybox.open({
+            src  : '.popup_3',
+            type : 'inline',
+            opts : {
+                onComplete : function() {
+                    console.info('done!');
+                }
+            },
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',
+            'speedIn': 500,
+            'speedOut': 300,
+            hideOnOverlayClick: true,
+            centerOnScroll: true
+        });
+    })
+
+    $('.banket').click(function () {
+        $.fancybox.open({
+            src  : '.popup_5',
+            type : 'inline',
+            opts : {
+                onComplete : function() {
+                    console.info('done!');
+                }
+            },
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',
+            'speedIn': 500,
+            'speedOut': 300,
+            hideOnOverlayClick: true,
+            centerOnScroll: true
+        });
+
+    })
 
 
+    $('.close').click(function () {
+        $.fancybox.close();
+    })
 
     $(".custom-option:first-of-type").hover(function () {
         $(this).parents(".custom-options").addClass("option-hover");
@@ -41,7 +129,7 @@ $(document).ready(function () {
         $(this).parents(".custom-select").removeClass("opened");
         $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
     });
-    $("#form_tel,#form_tel2,.steps_tel").mask("+7 99-999-99-99");
+    $("input[type='tel']").mask("+7 99-999-99-99");
 
     var scene1 = document.getElementById('scene-1');
     var parallax = new Parallax(scene1, {
@@ -105,7 +193,15 @@ $(document).ready(function () {
     $('.sert_gallery').slick({
         slidesToShow: 5,
         nextArrow: '<button class="arrow icon-chevron-left"></button>',
-        prevArrow: '<button class="arrow icon-chevron-right"></button>'
+        prevArrow: '<button class="arrow icon-chevron-right"></button>',
+        responsive: [
+            {
+                breakpoint: 1226,
+                settings: {
+                    slidesToShow: 4
+                }
+            }
+        ]
     })
 
 });
