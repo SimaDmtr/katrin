@@ -23,7 +23,7 @@ $(document).ready(function () {
         $(this).after(template);
     });
 
-    $("#first_screen_form,.popup form,#form_menu,#steps_form, #consult_form").submit(function () {
+    $("#first_screen_form,.popup form,#form_menu,#steps_form, #consult_form,#twelfth_screen_form").submit(function () {
         var th = $(this);
         $.ajax({
             type: "POST",
@@ -44,7 +44,13 @@ $(document).ready(function () {
                 'transitionOut': 'elastic',
                 'speedIn': 500,
                 'speedOut': 300,
-                hideOnOverlayClick: true
+                hideOnOverlayClick: true,
+                padding: 0, //убираем отступ
+                helpers: {
+                    overlay: {
+                        locked: false // отключаем блокировку overlay
+                    }
+                }
             });
 
         });
@@ -64,7 +70,13 @@ $(document).ready(function () {
             'speedIn': 500,
             'speedOut': 300,
             hideOnOverlayClick: true,
-            centerOnScroll: true
+            centerOnScroll: true,
+            padding: 0, //убираем отступ
+            helpers: {
+                overlay: {
+                    locked: false // отключаем блокировку overlay
+                }
+            }
         });
     })
 
@@ -82,7 +94,13 @@ $(document).ready(function () {
             'speedIn': 500,
             'speedOut': 300,
             hideOnOverlayClick: true,
-            centerOnScroll: true
+            centerOnScroll: true,
+            padding: 0, //убираем отступ
+            helpers: {
+                overlay: {
+                    locked: false // отключаем блокировку overlay
+                }
+            }
         });
     })
 
@@ -100,15 +118,19 @@ $(document).ready(function () {
             'speedIn': 500,
             'speedOut': 300,
             hideOnOverlayClick: true,
-            centerOnScroll: true
+            centerOnScroll: true,
+            padding: 0, //убираем отступ
+            helpers: {
+                overlay: {
+                    locked: false // отключаем блокировку overlay
+                }
+            }
         });
 
     })
 
 
-    $('.close').click(function () {
-        $.fancybox.close();
-    })
+
 
     $(".custom-option:first-of-type").hover(function () {
         $(this).parents(".custom-options").addClass("option-hover");

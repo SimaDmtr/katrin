@@ -1224,7 +1224,7 @@ button {
     margin-left: 2rem;
 }
 
-.first_row a {
+.first_row span{
     color: #f7132e;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -3462,61 +3462,6 @@ footer h2 {
     margin-top: .5rem;
 }
 
-.close {
-    position: absolute;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    width: 22px;
-    height: 22px;
-    opacity: 0.7;
-    top: -2.6rem;
-    transform-origin: 50% 50%;
-    right: -2rem;
-    cursor: pointer;
-}
-
-.close:hover {
-    opacity: 1;
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.close:hover .close:before, .close:hover .close:after {
-    background-color: #fdd73a;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.close:before, .close:after {
-    position: absolute;
-    left: 10px;
-    content: ' ';
-    height: 22px;
-    width: 2px;
-    background-color: #c7c9d2;
-}
-
-.close:before {
-    transform: rotate(45deg);
-}
-
-.close:after {
-    transform: rotate(-45deg);
-}
 
 .popup_img {
     position: absolute;
@@ -3619,6 +3564,43 @@ footer h2 {
     padding: 3rem 0 3rem 9rem !important;
 }
 
+.fancybox-slide--html .fancybox-close-small {
+    position: absolute;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 41px;
+    height: 60px;
+    padding: 0;
+    top: -4.6rem;
+    transform-origin: 50% 50%;
+    right: -4rem;
+    cursor: pointer;
+}
+
+.fancybox-slide--html .fancybox-close-small:hover {
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #fdd73a;
+}
+.fancybox-slide--html{
+    padding: 0;
+}
+.compensate-for-scrollbar
+{
+    margin-right: 0 !important;
+}
 @media only screen and (min-width: 1224px) and (max-width: 1824px) {
     html {
         font-size: 9px;
