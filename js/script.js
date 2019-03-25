@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    $('.menu_item,.second_screen_item.last,.service_list li a ').click(function () {
-        var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
-        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
-            $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1000); // анимируем скроолинг к элементу scroll_el
-        }
-    })
 
     $(".custom-select").each(function () {
         var classes = $(this).attr("class"),
@@ -22,6 +16,27 @@ $(document).ready(function () {
         $(this).hide();
         $(this).after(template);
     });
+    $(".custom-option:first-of-type").hover(function () {
+        $(this).parents(".custom-options").addClass("option-hover");
+    }, function () {
+        $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".custom-select-trigger").on("click", function () {
+        $('html').one('click', function () {
+            $(".custom-select").removeClass("opened");
+        });
+        $(this).parents(".custom-select").toggleClass("opened");
+        event.stopPropagation();
+    });
+    $(".custom-option").on("click", function () {
+        $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+        $(this).addClass("selection");
+        $(this).parents(".custom-select").removeClass("opened");
+        $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    });
+    $("input[type='tel']").mask("+7 99-999-99-99");
+
 
     $("#first_screen_form,.popup form,#form_menu,#steps_form, #consult_form,#twelfth_screen_form").submit(function () {
         var th = $(this);
@@ -33,10 +48,10 @@ $(document).ready(function () {
             $.fancybox.close();
             // код после успешной отправки формы
             $.fancybox.open({
-                src  : '.popup_2',
-                type : 'inline',
-                opts : {
-                    onComplete : function() {
+                src: '.popup_2',
+                type: 'inline',
+                opts: {
+                    onComplete: function () {
                         console.info('done!');
                     }
                 },
@@ -58,12 +73,13 @@ $(document).ready(function () {
     });
     $('.take_offer').click(function () {
         $.fancybox.open({
-            src  : '.popup_4',
-            type : 'inline',
-            opts : {
-                onComplete : function() {
+            src: '.popup_4',
+            type: 'inline',
+            opts: {
+                onComplete: function () {
                     console.info('done!');
-                }
+                },
+                touch:false
             },
             'transitionIn': 'elastic',
             'transitionOut': 'elastic',
@@ -82,12 +98,13 @@ $(document).ready(function () {
 
     $('.register').click(function () {
         $.fancybox.open({
-            src  : '.popup_3',
-            type : 'inline',
-            opts : {
-                onComplete : function() {
+            src: '.popup_3',
+            type: 'inline',
+            opts: {
+                onComplete: function () {
                     console.info('done!');
-                }
+                },
+                touch:false
             },
             'transitionIn': 'elastic',
             'transitionOut': 'elastic',
@@ -106,12 +123,13 @@ $(document).ready(function () {
 
     $('.banket').click(function () {
         $.fancybox.open({
-            src  : '.popup_5',
-            type : 'inline',
-            opts : {
-                onComplete : function() {
+            src: '.popup_5',
+            type: 'inline',
+            opts: {
+                onComplete: function () {
                     console.info('done!');
-                }
+                },
+                touch:false
             },
             'transitionIn': 'elastic',
             'transitionOut': 'elastic',
@@ -128,30 +146,44 @@ $(document).ready(function () {
         });
 
     })
+    $('.plate').click(function () {
+        if ($(this).hasClass('active')) {
+            $.fancybox.close({});
+
+        } else {
+            $.fancybox.open({
+                src: '.mobile_nav_wrapper',
+                type: 'inline',
+                opts: {
+                    onComplete: function () {
+                        console.info('done!');
+                    },
+                    afterClose: function () {
+                        $('.plate').removeClass('active');
+                    },
+
+                },
+
+                'transitionIn': 'elastic',
+                'transitionOut': 'elastic',
+                'speedIn': 500,
+                'speedOut': 300,
+                hideOnOverlayClick: true,
+                centerOnScroll: true,
+                padding: 0, //убираем отступ
+                helpers: {
+                    overlay: {
+                        locked: false // отключаем блокировку overlay
+                    }
+                },
 
 
+            });
+        }
+        this.classList.toggle('active')
+    })
 
 
-    $(".custom-option:first-of-type").hover(function () {
-        $(this).parents(".custom-options").addClass("option-hover");
-    }, function () {
-        $(this).parents(".custom-options").removeClass("option-hover");
-    });
-    $(".custom-select-trigger").on("click", function () {
-        $('html').one('click', function () {
-            $(".custom-select").removeClass("opened");
-        });
-        $(this).parents(".custom-select").toggleClass("opened");
-        event.stopPropagation();
-    });
-    $(".custom-option").on("click", function () {
-        $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
-        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-        $(this).addClass("selection");
-        $(this).parents(".custom-select").removeClass("opened");
-        $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-    });
-    $("input[type='tel']").mask("+7 99-999-99-99");
 
     var scene1 = document.getElementById('scene-1');
     var parallax = new Parallax(scene1, {
@@ -218,13 +250,26 @@ $(document).ready(function () {
         prevArrow: '<button class="arrow icon-chevron-right"></button>',
         responsive: [
             {
-                breakpoint: 1226,
+                breakpoint: 1476,
                 settings: {
                     slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1026,
+                settings: {
+                    slidesToShow: 3
                 }
             }
         ]
     })
-
+    $('.menu_item,.second_screen_item.last,.service_list li a ').click(function () {
+        var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+            $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1000); // анимируем скроолинг к элементу scroll_el
+            $.fancybox.close();
+            return false
+        }
+    })
 });
 
