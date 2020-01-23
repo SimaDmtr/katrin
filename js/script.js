@@ -35,10 +35,10 @@ $(document).ready(function () {
         $(this).parents(".custom-select").removeClass("opened");
         $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
     });
-    $("input[type='tel']").mask("+7 99-999-99-99");
+    $("input[type='tel']").mask("+7 999-999-99-99");
 
 
-    $("#first_screen_form,.popup form,#form_menu,#steps_form, #consult_form,#twelfth_screen_form").submit(function () {
+    $("#first_screen_form1,#first_screen_form2,.popup form,#form_menu,#consult_form, #steps_form, #degust_form").submit(function () {
         var th = $(this);
         $.ajax({
             type: "POST",
@@ -47,6 +47,21 @@ $(document).ready(function () {
         }).done(function () {
             $.fancybox.close();
             // код после успешной отправки формы
+            if ($('#menu_download').hasClass('download')) {
+                var link2 = document.createElement('a');
+                link2.setAttribute('href', 'menu.pdf');
+                link2.setAttribute('download', 'menu');
+                onload = link2.click();
+                $('#menu_download').removeClass('download')
+            }
+            if ($('#top10_download').hasClass('download')) {
+                var link = document.createElement('a');
+                link.setAttribute('href', 'top10.docx');
+                link.setAttribute('download', 'top10');
+                onload = link.click();
+                $('#top10_download').removeClass('download')
+            }
+
             $.fancybox.open({
                 src: '.popup_2',
                 type: 'inline',
@@ -79,7 +94,7 @@ $(document).ready(function () {
                 onComplete: function () {
                     console.info('done!');
                 },
-                touch:false
+                touch: false
             },
             'transitionIn': 'elastic',
             'transitionOut': 'elastic',
@@ -97,6 +112,7 @@ $(document).ready(function () {
     })
 
     $('.register').click(function () {
+        $.fancybox.close();
         $.fancybox.open({
             src: '.popup_3',
             type: 'inline',
@@ -104,7 +120,7 @@ $(document).ready(function () {
                 onComplete: function () {
                     console.info('done!');
                 },
-                touch:false
+                touch: false
             },
             'transitionIn': 'elastic',
             'transitionOut': 'elastic',
@@ -119,17 +135,76 @@ $(document).ready(function () {
                 }
             }
         });
+        return false;
     })
+    $('.consult').click(function () {
+        $.fancybox.close();
+        $.fancybox.open({
+            src: '.popup_1',
+            type: 'inline',
+            opts: {
+                onComplete: function () {
+                    console.info('done!');
+                },
+                touch: false
+            },
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',
+            'speedIn': 500,
+            'speedOut': 300,
+            hideOnOverlayClick: true,
+            centerOnScroll: true,
+            padding: 0, //убираем отступ
+            helpers: {
+                overlay: {
+                    locked: false // отключаем блокировку overlay
+                }
+            }
+        });
+        return false;
+    })
+    $('.fourth_screen_content_right_links a').click(function () {
 
+        $.fancybox.open({
+            src: '.popup_3',
+            type: 'inline',
+            opts: {
+                onComplete: function () {
+                    if ($('#menu_download').hasClass('download')) {
+                        var link2 = document.createElement('a');
+                        link2.setAttribute('href', 'menu.xls');
+                        link2.setAttribute('download', 'menu');
+                        onload = link2.click();
+                        $('#menu_download').removeClass('download')
+                    }
+                },
+                touch: false
+            },
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',
+            'speedIn': 500,
+            'speedOut': 300,
+            hideOnOverlayClick: true,
+            centerOnScroll: true,
+            padding: 0, //убираем отступ
+            helpers: {
+                overlay: {
+                    locked: false // отключаем блокировку overlay
+                }
+            }
+        });
+        var index = $(this).index();
+        console.log(index)
+        return false;
+    })
     $('.banket').click(function () {
         $.fancybox.open({
             src: '.popup_5',
             type: 'inline',
             opts: {
                 onComplete: function () {
-                    console.info('done!');
                 },
-                touch:false
+                touch: false
             },
             'transitionIn': 'elastic',
             'transitionOut': 'elastic',
@@ -144,12 +219,40 @@ $(document).ready(function () {
                 }
             }
         });
+    })
+    $('#menu_download,#download_header,.fourth_screen_content_right_links a').click(function () {
+        document.getElementById('menu_download').classList.add('download');
+    })
+
+    $('.top_10').click(function () {
+        $.fancybox.open({
+            src: '.popup_6',
+            type: 'inline',
+            opts: {
+                onComplete: function () {
+
+                },
+                touch: false
+            },
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',
+            'speedIn': 500,
+            'speedOut': 300,
+            hideOnOverlayClick: true,
+            centerOnScroll: true,
+            padding: 0, //убираем отступ
+            helpers: {
+                overlay: {
+                    locked: false // отключаем блокировку overlay
+                }
+            }
+        });
+        document.getElementById('top10_download').classList.add('download')
 
     })
     $('.plate').click(function () {
         if ($(this).hasClass('active')) {
             $.fancybox.close({});
-
         } else {
             $.fancybox.open({
                 src: '.mobile_nav_wrapper',
@@ -161,9 +264,8 @@ $(document).ready(function () {
                     afterClose: function () {
                         $('.plate').removeClass('active');
                     },
-
+                    touch: false
                 },
-
                 'transitionIn': 'elastic',
                 'transitionOut': 'elastic',
                 'speedIn': 500,
@@ -176,13 +278,10 @@ $(document).ready(function () {
                         locked: false // отключаем блокировку overlay
                     }
                 },
-
-
             });
         }
         this.classList.toggle('active')
-    })
-
+    });
 
 
     var scene1 = document.getElementById('scene-1');
@@ -260,16 +359,26 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 3
                 }
+            },
+            {
+                breakpoint: 484,
+                settings: {
+                    slidesToShow: 2
+                }
             }
         ]
     })
-    $('.menu_item,.second_screen_item.last,.service_list li a ').click(function () {
+    $('.menu_item,.second_screen_item.last,.service_list li a,.logo_img_wrap ').click(function () {
         var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
         if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
             $('html, body').animate({scrollTop: $(scroll_el).offset().top}, 1000); // анимируем скроолинг к элементу scroll_el
             $.fancybox.close();
             return false
         }
+    })
+    $('.show_more').click(function () {
+        $('.third_screen_left_list_item_col ul').removeClass('active')
+        $(this).siblings('ul')[0].classList.toggle('active');
     })
 });
 
